@@ -10,6 +10,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import LoginScreen from "./src/screens/LoginScreen";
 import HomeScreen from "./src/screens/Homepage";
 import FavoritesScreen from "./src/screens/FavoriteScreen";
+import HomeStack from "./src/navigation/HomeStack";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -70,6 +71,32 @@ export default function App() {
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
+<<<<<<< Updated upstream
+=======
+
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => {
+              if (route.name === "Home") {
+                return <Ionicons name="home" size={size} color={color} />;
+              }
+              if (route.name === "Favorites") {
+                return <Ionicons name="heart" size={size} color={color} />;
+              }
+              return null; // luôn return một component
+            },
+            tabBarActiveTintColor: '#007bff',
+            tabBarInactiveTintColor: 'gray',
+            tabBarStyle: { paddingVertical: 5, height: 70 },
+          })}
+        >
+          <Tab.Screen name="Home" component={HomeStack} />
+          <Tab.Screen name="Favorites" component={FavoritesScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+>>>>>>> Stashed changes
     </SafeAreaProvider>
   );
 }

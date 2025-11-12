@@ -13,12 +13,31 @@
     "@react-navigation/bottom-tabs": "^7.7.3",
     "@react-navigation/native": "^7.1.19",
     "@react-navigation/native-stack": "^7.6.2",
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "@react-navigation/stack": "^7.6.3",
+=======
+    "@react-navigation/stack": "^7.6.2",
+>>>>>>> Stashed changes
+=======
+    "@react-navigation/stack": "^7.6.2",
+>>>>>>> Stashed changes
     "expo": "~54.0.22",
+    "expo-blur": "~15.0.7",
     "expo-status-bar": "~3.0.8",
+    "lottie-ios": "^4.5.1",
+    "lottie-react-native": "~7.3.1",
     "react": "19.1.0",
     "react-native": "0.81.5",
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "react-native-gesture-handler": "~2.28.0",
+=======
+    "react-native-linear-gradient": "^2.8.3",
+>>>>>>> Stashed changes
+=======
+    "react-native-linear-gradient": "^2.8.3",
+>>>>>>> Stashed changes
     "react-native-safe-area-context": "~5.6.0",
     "react-native-screens": "~4.16.0"
   },

@@ -1,9 +1,11 @@
 // src/components/WeatherWidget.js
+import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function WeatherWidget() {
   const [weather, setWeather] = useState(null);
+  const navigation = useNavigation();
 
   useEffect(() => {
     fetch(
@@ -24,22 +26,20 @@ export default function WeatherWidget() {
   };
 
   return (
-    <View style={styles.widget}>
+    <TouchableOpacity 
+      style={styles.widget}
+      onPress={() => navigation.navigate("WeatherDetail", { lat: 21.0285, lon: 105.8542 })}
+    >
       <Text style={styles.title}>☀️ Thời tiết</Text>
       {weather ? (
         <>
-          {/* Icon + Nhiệt độ */}
           <View style={styles.main}>
             <Text style={styles.weatherIcon}>{getWeatherIcon(weather.weathercode)}</Text>
             <Text style={styles.temperature}>{weather.temperature}°C</Text>
           </View>
-
-          {/* Mô tả ngắn */}
           <Text style={styles.description}>
             {weather.weathercode === 0 ? "Nắng đẹp" : "Có mây"}
           </Text>
-
-          {/* Độ ẩm */}
           {weather.humidity !== null && (
             <Text style={styles.humidity}>Độ ẩm: {weather.humidity}%</Text>
           )}
@@ -47,7 +47,7 @@ export default function WeatherWidget() {
       ) : (
         <Text style={styles.value}>Đang tải...</Text>
       )}
-    </View>
+    </TouchableOpacity>
   );
 }
 
